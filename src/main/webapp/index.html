@@ -9,6 +9,7 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
 	integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
 	crossorigin="anonymous">
+<link rel="stylesheet" href="css/style.css">
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
 	integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
@@ -29,12 +30,19 @@
 	<div class="container">
 
 		<div class="">
-
+			<div class="jumbotron">
+				<div class="textCenter">Plano de voo</div>
+			</div>
 			<div ng-controller="myCtrl">
 
-				<div class="form-group">
-					Filtrar: <input ng-model="filtrar" class="form-control">
+				<div class="input-group">
+					<span class="input-group-btn">
+						<button class="btn btn-secondary" type="button">Vamos!</button>
+					</span> <input type="text" class="form-control"
+						placeholder="Buscar por..." aria-label="Buscar por..."
+						ng-model="filtrar">
 				</div>
+
 				<table class="table">
 					<thead>
 						<tr>
@@ -64,9 +72,12 @@
 					</tbody>
 				</table>
 
-				<div class="form-group col-md-2">
-					Filtrar pelo numero do voo: <input ng-model="filtrar.cod"
-						class="form-control">
+				<div class="input-group">
+					<input type="text" class="form-control"
+						placeholder="Buscar por voo" aria-label="Buscar por voo"
+						ng-model="filtrar.cod"> <span class="input-group-btn">
+						<button class="btn btn-secondary" type="button">Buscar!</button>
+					</span>
 				</div>
 			</div>
 
