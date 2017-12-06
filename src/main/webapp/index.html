@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app="atech">
+<head>
+<meta charset="UTF-8">
+<title>Plano de voo</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+	integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+	crossorigin="anonymous">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+	integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+	crossorigin="anonymous"></script>
+<script src="app/main.js">
+	
+</script>
+<script src="app/componentes/voo/voo.service.js">
+	
+</script>
+<script src="app/componentes/voo/voo.controller.js">
+	
+</script>
+
+
+</head>
+<body>
+	<div class="container">
+
+		<div class="">
+
+			<div ng-controller="myCtrl">
+
+				<div class="form-group">
+					Filtrar: <input ng-model="filtrar" class="form-control">
+				</div>
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">Voo Numero</th>
+							<th scope="col">Aviao</th>
+							<th scope="col">Piloto</th>
+							<th scope="col">Cidade origem</th>
+							<th scope="col">Cidade destino</th>
+							<th scope="col">Hora partida</th>
+							<th scope="col">Hora de chegada</th>
+							<th scope="col">Status</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="x in lista | filter:filtrar">
+							<td>{{ x.cod }}</td>
+							<td>{{ x.aviao.modelo }}</td>
+							<td>{{ x.piloto.nome }}</td>
+							<td>{{ x.cidadeOrigem }}</td>
+							<td>{{ x.cidadeDestino }}</td>
+							<td>{{ x.horaPartida }}</td>
+							<td>{{ x.horaChegada }}</td>
+							<td>{{ x.status }}</td>
+
+						</tr>
+
+					</tbody>
+				</table>
+
+				<div class="form-group col-md-2">
+					Filtrar pelo numero do voo: <input ng-model="filtrar.cod"
+						class="form-control">
+				</div>
+			</div>
+
+		</div>
+	</div>
+</body>
+</html>
